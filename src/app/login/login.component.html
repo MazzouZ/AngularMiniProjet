@@ -1,0 +1,25 @@
+<div class="sidenav">
+  <div class="login-main-text">
+    <h2>Gestion des Medicaments<br> Login Page</h2>
+    <p>Entrer vos données d'enregistrement dans les champs correspondant.</p>
+  </div>
+</div>
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+    <div class="login-form">
+      <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+        <div class="form-group">
+          <label>User Name</label>
+          <input ngModel="" type="text" name="username" class="form-control" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input ngModel="" type="password" name="password" class="form-control" required>
+        </div>
+        <div class="text-danger m-2" *ngIf="mz===89">UserName ou Mot de Passe est Incorrect !!</div>
+        <button type="submit" class="btn btn-black m-1">Login</button>
+        <button class="btn btn-secondary">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
