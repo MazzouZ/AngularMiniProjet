@@ -31,4 +31,7 @@ export class AuthService {
   loadToken() {
     return localStorage.getItem('token');
   }
+  isAuthenticated(){
+    return !(this.loadToken() == null);
+  }
 }

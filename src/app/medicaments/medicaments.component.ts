@@ -17,7 +17,7 @@ export class MedicamentsComponent implements OnInit {
   }
 
   getMedicament(){
-    this.crudService.getItems('medicaments').subscribe(
+    this.crudService.getItems('medicaments/').subscribe(
       data =>{
         console.log(data);
       },error => {

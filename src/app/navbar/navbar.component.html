@@ -8,12 +8,13 @@
   <div class="collapse navbar-collapse" id="collapsibleNavId">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/medicaments" routerLinkActive="active">Medicaments</a>
+        <a class="nav-link" routerLink="/medicaments" routerLinkActive="active" *ngIf="isAuthenticated()">Medicaments</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/fournisseurs" routerLinkActive="active">Fournisseurs</a>
+        <a class="nav-link" routerLink="/fournisseurs" routerLinkActive="active" *ngIf="isAuthenticated()">Fournisseurs</a>
       </li>
     </ul>
-    <a class="btn btn-light" routerLink="/login" routerLinkActive="btn-dark">Login</a>
+    <a class="btn btn-outline-dark" routerLink="/login" *ngIf="!isAuthenticated()">Login Page</a>
+    <a class="btn btn-outline-dark"  *ngIf="isAuthenticated()" (click)="onLogout()">Logout</a>
   </div>
 </nav>
