@@ -10,6 +10,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MedaddDialogeComponent } from './MedDialoge/medadd-dialoge/medadd-dialoge.component';
+import { MededitDialogeComponent } from './MedDialoge/mededit-dialoge/mededit-dialoge.component';
+import { FouraddDialogeComponent } from './FourDialoge/fouradd-dialoge/fouradd-dialoge.component';
+import { FoureditDialogeComponent } from './FourDialoge/fouredit-dialoge/fouredit-dialoge.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -17,7 +29,11 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     MedicamentsComponent,
     FournisseursComponent,
-    NavbarComponent
+    NavbarComponent,
+    MedaddDialogeComponent,
+    MededitDialogeComponent,
+    FouraddDialogeComponent,
+    FoureditDialogeComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +47,14 @@ import {HttpClientModule} from '@angular/common/http';
     ]),
     FormsModule,
     HttpClientModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatIconModule,
+    MatDialogModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
