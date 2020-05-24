@@ -1,0 +1,49 @@
+
+<div class="card" >
+    <div class="card-header card-header-danger mat-dialog-title">
+        <h4 class="card-title ">Ajouter Medicament</h4>
+    </div>
+  
+    <form  (ngSubmit)="submit()" #formControl="ngForm">
+  
+        <div class="form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="libelle"  [(ngModel)]="data.medicament.libelle" name="libelle" required>
+            </mat-form-field>
+        </div>
+  
+        <div class="form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="categorie" [(ngModel)]="data.medicament.categorie" name="categorie">
+            </mat-form-field>
+        </div>
+  
+        <div class="form">
+            <mat-form-field >
+                <input matInput placeholder="prix" [(ngModel)]="data.medicament.prix" name="prix" email>
+                <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field >
+                <input matInput placeholder="quantite" [(ngModel)]="data.medicament.quantite" name="quantite" email>
+                <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field >
+                <input matInput placeholder="date" [(ngModel)]="data.medicament.date" name="date" email>
+                <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+  
+        <div mat-dialog-actions>
+            <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="addMed()" class="btn btn-danger pull-right">Ajouter</button>
+            <button mat-button (click)="onNoClick()" tabindex="-1">Annuler</button>
+        </div>
+    </form>
+  
+  </div>
+  
