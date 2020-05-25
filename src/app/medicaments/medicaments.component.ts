@@ -69,7 +69,7 @@ export class MedicamentsComponent implements OnInit {
   openModifyDialog(row) {
     const dialogRef = this.dialog.open(MededitDialogeComponent, {
       width: '500px',
-      data: {organisation :row}
+      data: {medicament :row}
     });
 
     dialogRef.afterClosed().subscribe(result => {

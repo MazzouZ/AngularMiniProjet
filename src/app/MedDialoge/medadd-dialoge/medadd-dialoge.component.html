@@ -8,34 +8,31 @@
   
         <div class="form">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="libelle"  [(ngModel)]="data.medicament.libelle" name="libelle" required>
+                <input matInput placeholder="libelle"  [(ngModel)]="data.libelle" name="libelle" >
             </mat-form-field>
         </div>
   
         <div class="form">
             <mat-form-field class="example-full-width">
-                <input matInput placeholder="categorie" [(ngModel)]="data.medicament.categorie" name="categorie">
+                <input matInput placeholder="categorie" [(ngModel)]="data.categorie" name="categorie">
             </mat-form-field>
         </div>
   
         <div class="form">
             <mat-form-field >
-                <input matInput placeholder="prix" [(ngModel)]="data.medicament.prix" name="prix" email>
-                <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+                <input matInput placeholder="prix" [(ngModel)]="data.prix" name="prix" >
             </mat-form-field>
         </div>
 
         <div class="form">
             <mat-form-field >
-                <input matInput placeholder="quantite" [(ngModel)]="data.medicament.quantite" name="quantite" email>
-                <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+                <input matInput placeholder="quantite" [(ngModel)]="data.quantite" name="quantite">
             </mat-form-field>
         </div>
 
         <div class="form">
             <mat-form-field >
-                <input matInput placeholder="date" [(ngModel)]="data.medicament.date" name="date" email>
-                <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+                <input matInput placeholder="date" [(ngModel)]="data.date" name="date">
             </mat-form-field>
         </div>
   
