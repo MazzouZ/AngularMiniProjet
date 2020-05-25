@@ -17,11 +17,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MedaddDialogeComponent } from './MedDialoge/medadd-dialoge/medadd-dialoge.component';
-import { MededitDialogeComponent } from './MedDialoge/mededit-dialoge/mededit-dialoge.component';
+import { MedaddDialogeComponent } from './medicaments/medadd-dialoge/medadd-dialoge.component';
+import { MededitDialogeComponent } from './medicaments/mededit-dialoge/mededit-dialoge.component';
 import { FouraddDialogeComponent } from './FourDialoge/fouradd-dialoge/fouradd-dialoge.component';
 import { FoureditDialogeComponent } from './FourDialoge/fouredit-dialoge/fouredit-dialoge.component';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatButtonModule, MatSortModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -39,11 +40,11 @@ import {MatChipsModule} from '@angular/material/chips';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: 'medicaments', component: MedicamentsComponent },
-      { path: 'fournisseurs', component: FournisseursComponent },
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
-      { path: '**', redirectTo: 'login' }
+      {path: 'login', component: LoginComponent},
+      {path: 'medicaments', component: MedicamentsComponent},
+      {path: 'fournisseurs', component: FournisseursComponent},
+      {path: '', redirectTo: 'login', pathMatch: 'full'},
+      {path: '**', redirectTo: 'medicaments'}
     ]),
     FormsModule,
     HttpClientModule,
@@ -55,6 +56,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatIconModule,
     MatDialogModule,
     MatChipsModule,
+    MatSortModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

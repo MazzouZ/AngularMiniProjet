@@ -12,22 +12,22 @@ export class CrudService {
   }
 
   public getItems(type: string) {
-    return this.http.get(this.url + type,
+    return this.http.get(this.url + type+'/',
       {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})});
   }
 
   public addItem(type: string, object: any) {
-    return this.http.post(this.url + type, object,
+    return this.http.post(this.url + type+'/', object,
       {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})});
   }
 
   public editItem(type: string, id: number, object: any) {
-    return this.http.put(this.url + type + '/' + id, object,
+    return this.http.put(this.url + type + '/' + id+'/', object,
       {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})});
   }
 
   public deleteItem(type: string, id: number) {
-    return this.http.delete(this.url + type + '/' + id,
+    return this.http.delete(this.url + type + '/' + id+'/',
       {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})});
   }
 
