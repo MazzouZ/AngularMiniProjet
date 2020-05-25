@@ -13,7 +13,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class MededitDialogeComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<MededitDialogeComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: MedicamentElement,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private crudService:CrudService,private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
@@ -24,7 +24,7 @@ export class MededitDialogeComponent implements OnInit {
   ]);
 
   public editMed() {
-    this.crudService.editItem("medicaments",this.data.id,this.data);
+    this.crudService.editItem("medicaments",this.data.medicament.id,this.data.medicament);
     this._snackBar.open('Element Modified',"",{
       duration: 2000,
       verticalPosition: 'top',

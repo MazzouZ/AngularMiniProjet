@@ -30,7 +30,7 @@ export class CrudService {
 
   public editItem(type: string, id: number, object: any) {
 
-    return this.http.put(this.url + type + '/' + id+'/', object,
+    return this.http.put(this.url + type + '/' + id, object,
       {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})}).subscribe(
       data =>{
         console.log(data);
@@ -40,7 +40,7 @@ export class CrudService {
   }
 
   public deleteItem(type: string, id: number) {
-    return this.http.delete(this.url + type + '/' + id+'/',
+    return this.http.delete(this.url + type + '/' + id,
       {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})}).subscribe(
       data =>{
         console.log(data);

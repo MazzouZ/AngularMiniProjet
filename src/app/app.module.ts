@@ -24,6 +24,8 @@ import {FournisseursComponent} from './fournisseurs/fournisseurs.component';
 import {MedicamentsComponent} from './medicaments/medicaments.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {NavbarComponent} from './navbar/navbar.component';
+import { AddFournisseurComponent } from './fournisseurs/add-fournisseur/add-fournisseur.component';
+import { EditFournisseurComponent } from './fournisseurs/edit-fournisseur/edit-fournisseur.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import {NavbarComponent} from './navbar/navbar.component';
     MededitDialogeComponent,
     FouraddDialogeComponent,
     FoureditDialogeComponent,
+    AddFournisseurComponent,
+    EditFournisseurComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 
   ],
   providers: [],
-  entryComponents:[MedaddDialogeComponent,MededitDialogeComponent],
+  entryComponents:[MedaddDialogeComponent,MededitDialogeComponent,AddFournisseurComponent,EditFournisseurComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

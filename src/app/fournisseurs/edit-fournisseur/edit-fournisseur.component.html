@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-header card-header-danger mat-dialog-title">
+    <h4 class="card-title ">Modifier Fournisseur</h4>
+  </div>
+
+  <form #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="nom" value="{{data.fournisseur.nom}}" [(ngModel)]="data.fournisseur.nom" name="nom">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="email" value="{{data.fournisseur.email}}" [(ngModel)]="data.fournisseur.email"
+               name="email">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field>
+        <input matInput placeholder="adresse" [(ngModel)]="data.fournisseur.adresse" value="{{data.fournisseur.adresse}}"
+               name="adresse">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field>
+        <input matInput placeholder="telephone" [(ngModel)]="data.fournisseur.telephone"
+               value="{{data.fournisseur.telephone}}" name="telephone">
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="editFournisseur()"
+              class="btn btn-danger pull-right">Modifier
+      </button>
+      <button mat-button mat-dialog-close tabindex="-1">Annuler</button>
+    </div>
+  </form>
+
+</div>
