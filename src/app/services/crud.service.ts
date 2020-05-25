@@ -17,18 +17,36 @@ export class CrudService {
   }
 
   public addItem(type: string, object: any) {
+    object.fournisseur = "1";
+    console.log(object);
     return this.http.post(this.url + type+'/', object,
-      {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})});
+      {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})}).subscribe(
+      data =>{
+        console.log(data);
+      },error => {
+        console.log(error);
+      });
   }
 
   public editItem(type: string, id: number, object: any) {
+
     return this.http.put(this.url + type + '/' + id+'/', object,
-      {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})});
+      {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})}).subscribe(
+      data =>{
+        console.log(data);
+      },error => {
+        console.log(error);
+      });
   }
 
   public deleteItem(type: string, id: number) {
     return this.http.delete(this.url + type + '/' + id+'/',
-      {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})});
+      {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})}).subscribe(
+      data =>{
+        console.log(data);
+      },error => {
+        console.log(error);
+      });
   }
 
 }

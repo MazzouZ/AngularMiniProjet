@@ -24,7 +24,7 @@ export class MededitDialogeComponent implements OnInit {
   ]);
 
   public editMed() {
-    this.crudService.editItem("medicaments",this.data.pk,this.data);
+    this.crudService.editItem("medicaments",this.data.id,this.data);
     this._snackBar.open('Element Modified',"",{
       duration: 2000,
       verticalPosition: 'top',
