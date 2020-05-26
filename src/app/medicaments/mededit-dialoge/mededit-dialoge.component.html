@@ -36,6 +36,17 @@
             </mat-form-field>
         </div>
 
+        <div class="form">
+            <mat-form-field >
+                <mat-label>Fournisseur</mat-label>
+                <mat-select [(value)]="data.medicament.fournisseur">
+                    <mat-option *ngFor="let f of fournisseur"  [value]="f.id">
+                    {{f.nom}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
         <div mat-dialog-actions>
             <button mat-button [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="editMed()" class="btn btn-danger pull-right">Modifier</button>
             <button mat-button mat-dialog-close tabindex="-1">Annuler</button>

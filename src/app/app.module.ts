@@ -19,6 +19,7 @@ import { FouraddDialogeComponent } from './FourDialoge/fouradd-dialoge/fouradd-d
 import { FoureditDialogeComponent } from './FourDialoge/fouredit-dialoge/fouredit-dialoge.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatButtonModule, MatSortModule} from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 import {LoginComponent} from './login/login.component';
 import {FournisseursComponent} from './fournisseurs/fournisseurs.component';
 import {MedicamentsComponent} from './medicaments/medicaments.component';
@@ -63,6 +64,7 @@ import { EditFournisseurComponent } from './fournisseurs/edit-fournisseur/edit-f
     MatChipsModule,
     MatSortModule,
     MatButtonModule,
+    MatSelectModule,
 
   ],
   providers: [],

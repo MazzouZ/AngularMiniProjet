@@ -12,11 +12,21 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class MededitDialogeComponent implements OnInit {
 
+  fournisseur : any;
+
   constructor(public dialogRef: MatDialogRef<MededitDialogeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private crudService:CrudService,private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.getfour();
+  }
+
+  public getfour()
+  {
+    this.crudService.getItems('fournisseurs').subscribe(
+      data=>{this.fournisseur=data}
+    );
   }
 
   formControl = new FormControl('', [

@@ -35,6 +35,17 @@
                 <input matInput placeholder="date" [(ngModel)]="data.date" name="date">
             </mat-form-field>
         </div>
+        <div class="form">
+            <mat-form-field >
+                <mat-label>Fournisseur</mat-label>
+                <mat-select [(value)]="data.fournisseur">
+                    <mat-option *ngFor="let f of fournisseur"  [value]="f.id">
+                    {{f.nom}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
   
         <div mat-dialog-actions>
             <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="addMed()" class="btn btn-danger pull-right">Ajouter</button>

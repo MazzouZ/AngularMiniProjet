@@ -17,7 +17,6 @@ export class CrudService {
   }
 
   public addItem(type: string, object: any) {
-    object.fournisseur = "1";
     console.log(object);
     return this.http.post(this.url + type+'/', object,
       {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})}).subscribe(

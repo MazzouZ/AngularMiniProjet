@@ -13,12 +13,15 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class MedaddDialogeComponent implements OnInit {
 
+  fournisseur : any;
+
   constructor(public dialogRef: MatDialogRef<MedaddDialogeComponent>,
               @Inject(MAT_DIALOG_DATA) public data: MedicamentElement,
               private crudService: CrudService, private _snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
+    this.getfour()
   }
 
   formControl = new FormControl('', [
@@ -33,6 +36,13 @@ export class MedaddDialogeComponent implements OnInit {
       verticalPosition: 'top',
       panelClass: ['snackbarSuccess']
     });
+  }
+
+  public getfour()
+  {
+    this.crudService.getItems('fournisseurs').subscribe(
+      data=>{this.fournisseur=data}
+    );
   }
 
   submit() {
