@@ -30,7 +30,6 @@ export class FournisseursComponent implements OnInit {
   displayedColumns: string[] = ['nom', 'email', 'adresse', 'telephone','Actions'];
   dataSource = new MatTableDataSource<FournisseurElement>();
   tab : any;
-  list :any[];
 
   constructor(private crudService: CrudService, private authService: AuthService,
               public dialog: MatDialog, private _snackBar: MatSnackBar) {
@@ -100,11 +99,6 @@ export class FournisseursComponent implements OnInit {
 
 //---------------------------------------------------------------------
   deleteOrg(row) {
-      /*this.crudService.getItems('medicaments').subscribe(data =>{this.tab=data});
-      this.tab.forEach(function (med) {
-        if(med.id===row.id)
-          {this.crudService.deleteItem('medicaments', med.id);} 
-      });*/
     this.crudService.deleteItem('fournisseurs', row.id);
     setTimeout(() => {
       this.getFournisseurs();

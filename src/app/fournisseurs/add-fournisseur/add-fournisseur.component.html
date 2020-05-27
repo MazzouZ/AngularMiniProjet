@@ -6,25 +6,25 @@
   <form (ngSubmit)="submit()" #formControl="ngForm">
 
     <div class="form">
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="width">
         <input matInput placeholder="nom" [(ngModel)]="data.nom" name="nom">
       </mat-form-field>
     </div>
 
     <div class="form">
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="width">
         <input matInput placeholder="email" [(ngModel)]="data.email" name="email">
       </mat-form-field>
     </div>
 
     <div class="form">
-      <mat-form-field>
+      <mat-form-field class="width">
         <input matInput placeholder="adresse" [(ngModel)]="data.adresse" name="adresse">
       </mat-form-field>
     </div>
 
     <div class="form">
-      <mat-form-field>
+      <mat-form-field class="width">
         <input matInput placeholder="telephone" [(ngModel)]="data.telephone" name="telephone">
       </mat-form-field>
     </div>

@@ -19,25 +19,25 @@
         </div>
 
         <div class="form">
-            <mat-form-field >
+            <mat-form-field class="example-full-width">
                 <input matInput placeholder="prix" [(ngModel)]="data.medicament.prix" value="{{data.medicament.prix}}" name="prix">
             </mat-form-field>
         </div>
 
         <div class="form">
-            <mat-form-field >
+            <mat-form-field class="example-full-width">
                 <input matInput placeholder="quantite" [(ngModel)]="data.medicament.quantite" value="{{data.medicament.quantite}}" name="quantite">
             </mat-form-field>
         </div>
 
         <div class="form">
-            <mat-form-field >
+            <mat-form-field class="example-full-width">
                 <input matInput placeholder="date" [(ngModel)]="data.medicament.date" value="{{data.medicament.date}}" name="date">
             </mat-form-field>
         </div>
 
         <div class="form">
-            <mat-form-field >
+            <mat-form-field class="example-full-width">
                 <mat-label>Fournisseur</mat-label>
                 <mat-select [(value)]="data.medicament.fournisseur">
                     <mat-option *ngFor="let f of fournisseur"  [value]="f.id">
