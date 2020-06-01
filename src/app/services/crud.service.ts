@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AuthService} from './auth.service';
+import { MatSnackBar } from '@angular/material';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import {AuthService} from './auth.service';
 export class CrudService {
   private url = 'http://127.0.0.1:8000/';
 
-  constructor(private http: HttpClient, private authService: AuthService) {
+  constructor(private http: HttpClient, private authService: AuthService, private _snackBar: MatSnackBar) {
   }
 
   public getItems(type: string) {
@@ -22,8 +23,18 @@ export class CrudService {
       {headers: new HttpHeaders({'Authorization': this.authService.loadToken()})}).subscribe(
       data =>{
         console.log(data);
+        this._snackBar.open('Element Created', '', {
+          duration: 2000,
+          verticalPosition: 'top',
+          panelClass: ['snackbarSuccess']
+        });
       },error => {
         console.log(error);
+        this._snackBar.open('Libelle already exist ,try choosing another one', '', {
+          duration: 5000,
+          verticalPosition: 'top',
+          panelClass: ['snackbarDelete']
+        });
       });
   }
 

@@ -31,11 +31,7 @@ export class MedaddDialogeComponent implements OnInit {
 
   public addMed() {
     this.crudService.addItem('medicaments', this.data);
-    this._snackBar.open('Element Created', '', {
-      duration: 2000,
-      verticalPosition: 'top',
-      panelClass: ['snackbarSuccess']
-    });
+    
   }
 
   public getfour()
