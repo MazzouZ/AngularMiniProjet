@@ -27,6 +27,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NavbarComponent} from './navbar/navbar.component';
 import { AddFournisseurComponent } from './fournisseurs/add-fournisseur/add-fournisseur.component';
 import { EditFournisseurComponent } from './fournisseurs/edit-fournisseur/edit-fournisseur.component';
+import { CoursComponent } from './Cours/cours/cours.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { EditFournisseurComponent } from './fournisseurs/edit-fournisseur/edit-f
     FoureditDialogeComponent,
     AddFournisseurComponent,
     EditFournisseurComponent,
+    CoursComponent,
   ],
   imports: [
     BrowserModule,
