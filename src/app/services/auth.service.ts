@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   register(user) {
-    return this.http.post(this.url + 'users', user);
+    return this.http.post(this.url + 'api/register/', user);
   }
 
   saveToken(jwToken) {

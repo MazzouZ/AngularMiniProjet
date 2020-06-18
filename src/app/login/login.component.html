@@ -7,18 +7,48 @@
 <div class="main">
   <div class="col-md-6 col-sm-12">
     <div class="login-form">
-      <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
-        <div class="form-group">
-          <label>User Name</label>
-          <input ngModel="" type="text" name="username" class="form-control" placeholder="Username" required>
+      <form [formGroup]="formGroup" autocomplete="off" novalidate #f="ngForm" (ngSubmit)="onLogin(f.value)">
+
+        <mat-form-field class="myInput-full-width">
+          <mat-label>User Name</mat-label>
+          <input matInput type="text" [(ngModel)]="user.username" matInput formControlName="username" [errorStateMatcher]="matcher"
+                 placeholder="Username" required>
+          <mat-hint>8 charactère maximum</mat-hint>
+        </mat-form-field>
+
+        <div *ngIf="registerMode">
+          <mat-form-field class="myInput-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" [errorStateMatcher]="matcher" [(ngModel)]="user.email"
+                   placeholder="Ex. MZ@example.com" required>
+            <mat-hint>mail valide !</mat-hint>
+          </mat-form-field>
         </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input ngModel="" type="password" name="password" class="form-control" required>
+
+        <mat-form-field class="myInput-full-width">
+          <mat-label>Password</mat-label>
+          <input type="password" [(ngModel)]="user.password" matInput formControlName="password" [errorStateMatcher]="matcher" required>
+        </mat-form-field>
+
+        <mat-form-field class="myInput-full-width" *ngIf="registerMode">
+          <mat-label>Password confirmation</mat-label>
+          <input type="password" [(ngModel)]="user.password2" matInput formControlName="password2" [errorStateMatcher]="matcher" required>
+        </mat-form-field>
+
+        <div class="alert alert-danger m-2" *ngIf="mz===89">UserName ou Mot de Passe est Incorrect !!</div>
+        <div class="alert alert-danger m-2" *ngIf="mz===39"><p>
+          Utilisateur déja existé !
+        </p>
         </div>
-        <div class="text-danger m-2" *ngIf="mz===89">UserName ou Mot de Passe est Incorrect !!</div>
-        <button type="submit" class="btn btn-black m-1">Login</button>
-        <button class="btn btn-secondary">Register</button>
+        <button type="submit" class="btn btn-black m-1" *ngIf="!registerMode">
+          Login
+        </button>
+        <button class="btn btn-secondary text-white mr-2"
+                [ngStyle]="{'cursor':formGroup.invalid && registerMode ? 'not-allowed' : 'pointer' }"
+                (click)="onRegister(f.value)" [disabled]="formGroup.invalid && registerMode">
+          Register
+        </button>
+        <a style="cursor: pointer" (click)="onLogin(f.value)" *ngIf="registerMode">J'ai déja un compte</a>
       </form>
     </div>
   </div>
